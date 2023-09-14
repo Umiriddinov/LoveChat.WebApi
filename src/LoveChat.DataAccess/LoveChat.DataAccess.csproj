@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LoveChat.Domain\LoveChat.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Handlers\" />
+    <Folder Include="Interfaces\Messages\" />
+    <Folder Include="Interfaces\Users\" />
+    <Folder Include="Repositories\Messages\" />
+    <Folder Include="Repositories\Users\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Utils\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.151" />
+    <PackageReference Include="Dapper.Mapper" Version="2.0.0" />
+    <PackageReference Include="Npgsql" Version="7.0.4" />
+    <PackageReference Include="SqlMapper" Version="2.0.0" />
+  </ItemGroup>
+
+</Project>
