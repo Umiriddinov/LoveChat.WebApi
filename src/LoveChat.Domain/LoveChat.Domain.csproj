@@ -10,7 +10,6 @@
     <Folder Include="Constants\" />
     <Folder Include="Entities\" />
     <Folder Include="Enums\" />
-    <Folder Include="Exceptions\" />
   </ItemGroup>
 
 </Project>

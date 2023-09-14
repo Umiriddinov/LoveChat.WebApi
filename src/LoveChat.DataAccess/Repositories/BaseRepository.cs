@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Npgsql;
 
-namespace LoveChat.DataAccess.Repositories
+namespace LoveChat.DataAccess.Repositories;
+
+public class BaseRepository
 {
-    internal class BaseRepository
+    protected readonly NpgsqlConnection _connection;
+
+    public BaseRepository()
     {
+        Dapper.DefaultTypeMap.MatchNamesWithUnderscores = true;
+        this._connection = new NpgsqlConnection("Host=localhost; Port=5432; Database=Chat-db; User Id=postgres; Password=@20112606;");
+
     }
 }

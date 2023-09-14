@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LoveChat.DataAccess.Common.Interfaces;
+using LoveChat.Domain.Entities.Messages;
 
-namespace LoveChat.DataAccess.Interfaces.Messages
+namespace LoveChat.DataAccess.Interfaces.Messages;
+
+public interface IMessagesRepository : IRepository<Message, Message>,
+    IGetAll<Message>, ISearchable<Message>
 {
-    internal interface IMessagesRepository
-    {
-    }
 }

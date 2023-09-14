@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace LoveChat.Domain.Entities
 {
-    internal class BaseEntity
+    public class BaseEntity
     {
+        public long Id { get; set; }
     }
 }

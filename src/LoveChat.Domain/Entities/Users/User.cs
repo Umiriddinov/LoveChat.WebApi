@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace LoveChat.Domain.Entities.Users
 {
-    internal class User
+    public class User : Auditable
     {
+        public string UserName { get; set; } = string.Empty;
+
+        public string PasswordHash { get; set; } = String.Empty;
+
+        public string Salt { get; set; } = String.Empty;
+
+        public string PhoneNumber { get; set; } = String.Empty;
+
     }
 }

@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace LoveChat.Domain.Entities.Messages
 {
-    internal class Message
+    public class Message : Auditable
     {
+        public long SenderId { get; set; }
+
+        public long ReseiverId { get; set; }
     }
 }
