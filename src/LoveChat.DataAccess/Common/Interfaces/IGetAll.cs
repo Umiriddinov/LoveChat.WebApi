@@ -1,6 +1,8 @@
-﻿namespace LoveChat.DataAccess.Common.Interfaces;
+﻿using LoveChat.DataAccess.Utils;
+
+namespace LoveChat.DataAccess.Common.Interfaces;
 
 public interface IGetAll<TModel>
 {
-/*    public Task<IList<TModel>> GetAllAsync(PaginationParams @params);
-*/}
+    public Task<IList<TModel>> GetAllAsync(PaginationParams @params);
+}

@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using LoveChat.DataAccess.Interfaces;
 using LoveChat.DataAccess.Interfaces.Messages;
+using LoveChat.DataAccess.Utils;
 using LoveChat.Domain.Entities.Messages;
 using System;
 using System.Collections.Generic;
@@ -36,8 +37,8 @@ public class MessageRepository : BaseRepository, IMessagesRepository
         try
         {
             await _connection.OpenAsync();
-            string query = "INSERT INTO messages( sender_id, reseiver_id, created_at, updated_at)" +
-                "VALUES(@SenderId, @ReseiverId, @CreatedAt, @UpdatedAt); ";
+            string query = "INSERT INTO messages( sender_id, reseiver_id,image_path, created_at, updated_at)" +
+                "VALUES(@SenderId, @ReseiverId,@ImagePath, @CreatedAt, @UpdatedAt); ";
             var result = await _connection.ExecuteAsync(query, entity);
             return result;
         }
@@ -70,6 +71,11 @@ public class MessageRepository : BaseRepository, IMessagesRepository
         }
     }
 
+    public Task<IList<Message>> GetAllAsync(PaginationParams @params)
+    {
+        throw new NotImplementedException();
+    }
+
     public async Task<Message?> GetByIdAsync(long id)
     {
         try
@@ -89,13 +95,18 @@ public class MessageRepository : BaseRepository, IMessagesRepository
         }
     }
 
+    public Task<(int ItemCount, IList<Message>)> SearchAsync(string search, PaginationParams @params)
+    {
+        throw new NotImplementedException();
+    }
+
     public async Task<int> UpdateAsync(long id, Message entity)
     {
         try
         {
             await _connection.OpenAsync();
             string query = $"UPDATE public.messages" +
-                $"SET sender_id = @SenderId, reseiver_id = @ReseiverId, created_at = @CreatedAt, updated_at = @UpdatedAt" +
+                $"SET sender_id = @SenderId, reseiver_id = @ReseiverId,image_path = @ImagePath, created_at = @CreatedAt, updated_at = @UpdatedAt" +
                 $"WHERE id={id};";
 
             var result = await _connection.ExecuteAsync(query, entity);

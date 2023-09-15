@@ -11,8 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Common\" />
-    <Folder Include="Dtos\" />
     <Folder Include="Interfaces\" />
     <Folder Include="Validators\" />
   </ItemGroup>

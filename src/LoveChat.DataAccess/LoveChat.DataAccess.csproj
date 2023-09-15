@@ -16,7 +16,6 @@
     <Folder Include="Interfaces\Users\" />
     <Folder Include="Repositories\Users\" />
     <Folder Include="ViewModels\" />
-    <Folder Include="Utils\" />
   </ItemGroup>
 
   <ItemGroup>
