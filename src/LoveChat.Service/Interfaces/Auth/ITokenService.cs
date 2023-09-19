@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LoveChat.Domain.Entities.Users;
 
-namespace LoveChat.Service.Interfaces.Auth
+namespace LoveChat.Service.Interfaces.Auth;
+
+public interface ITokenService
 {
-    internal interface ITokenService
-    {
-    }
+    public string GenerateToken(User user);
+
 }

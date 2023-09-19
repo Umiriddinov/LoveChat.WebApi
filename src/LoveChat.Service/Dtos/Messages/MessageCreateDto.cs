@@ -13,6 +13,9 @@ public class MessageCreateDto
 
     public string PhoneNumber { get; set; } = String.Empty;
 
+    public string MessagesText { get; set; } = string.Empty;
+
     public IFormFile Image { get; set; } = default!;
+
 
 }

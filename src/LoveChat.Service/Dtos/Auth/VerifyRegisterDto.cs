@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LoveChat.Service.Dtos.Auth
+namespace LoveChat.Service.Dtos.Auth;
+
+public class VerifyRegisterDto
 {
-    internal class VerifyRegisterDto
-    {
-    }
+    public string PhoneNumber { get; set; } = String.Empty;
 }

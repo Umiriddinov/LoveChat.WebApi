@@ -38,7 +38,7 @@ public class MessageRepository : BaseRepository, IMessagesRepository
         {
             await _connection.OpenAsync();
             string query = "INSERT INTO messages( sender_id, reseiver_id,image_path, created_at, updated_at)" +
-                "VALUES(@SenderId, @ReseiverId,@ImagePath, @CreatedAt, @UpdatedAt); ";
+                "VALUES(@SenderId, @ReseiverId,@ImagePath,@MessagesText, @CreatedAt, @UpdatedAt); ";
             var result = await _connection.ExecuteAsync(query, entity);
             return result;
         }
@@ -106,7 +106,7 @@ public class MessageRepository : BaseRepository, IMessagesRepository
         {
             await _connection.OpenAsync();
             string query = $"UPDATE public.messages" +
-                $"SET sender_id = @SenderId, reseiver_id = @ReseiverId,image_path = @ImagePath, created_at = @CreatedAt, updated_at = @UpdatedAt" +
+                $"SET sender_id = @SenderId, reseiver_id = @ReseiverId,image_path = @ImagePath,messages_text = @MessagesText, created_at = @CreatedAt, updated_at = @UpdatedAt" +
                 $"WHERE id={id};";
 
             var result = await _connection.ExecuteAsync(query, entity);

@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using LoveChat.DataAccess.Interfaces.Users;
+using LoveChat.DataAccess.Utils;
 using LoveChat.DataAccess.ViewModels;
 using LoveChat.Domain.Entities.Users;
 
@@ -64,6 +65,11 @@ public class UserRepository : BaseRepository, IUserRepository
         }
     }
 
+    public Task<IList<UserViewModel>> GetAllAsync(PaginationParams @params)
+    {
+        throw new NotImplementedException();
+    }
+
     public Task<UserViewModel?> GetByIdAsync(long id)
     {
         throw new NotImplementedException();
@@ -86,6 +92,11 @@ public class UserRepository : BaseRepository, IUserRepository
         {
             await _connection.CloseAsync();
         }
+    }
+
+    public Task<(int ItemCount, IList<UserViewModel>)> SearchAsync(string search, PaginationParams @params)
+    {
+        throw new NotImplementedException();
     }
 
     public async Task<int> UpdateAsync(long id, User entity)

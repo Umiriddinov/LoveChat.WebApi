@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LoveChat.Service.Dtos.Auth;
 
-namespace LoveChat.Service.Interfaces.Auth
+namespace LoveChat.Service.Interfaces.Auth;
+
+public interface IAuthService
 {
-    internal interface IAuthService
-    {
-    }
+    public Task<(bool Result, int CachedMinutes)> RegisterAsync(RegisterDto dto);
+
+    public Task<(bool Result, int CachedVerificationMinutes)> SendCodeForRegisterAsync(string phone);
+
+    public Task<(bool Result, string Token)> VerifyRegisterAsync(string phone, int code);
+
+    public Task<(bool Result, string Token)> LoginAsync(LoginDto loginDto);
 }

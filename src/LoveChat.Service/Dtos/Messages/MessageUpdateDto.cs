@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LoveChat.Service.Dtos.Messages
+namespace LoveChat.Service.Dtos.Messages;
+
+public class MessageUpdateDto
 {
-    internal class MessageUpdateDto
-    {
-    }
+    public string MessagesText { get; set; } = string.Empty;
+
 }

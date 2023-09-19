@@ -13,5 +13,7 @@ namespace LoveChat.Domain.Entities.Messages
         public long ReseiverId { get; set; }
 
         public string ImagePath { get; set; } = string.Empty;
+
+        public string MessagesText { get; set; } = string.Empty;
     }
 }
