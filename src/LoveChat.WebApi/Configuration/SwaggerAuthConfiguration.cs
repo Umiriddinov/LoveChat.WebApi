@@ -10,7 +10,7 @@ namespace LoveChat.WebApi.Configuration
             {
                 options.SwaggerDoc("v1", new OpenApiInfo
                 {
-                    Title = "Agile Shop Api",
+                    Title = "Friends Chat Api",
                     Version = "v1"
                 });
 

@@ -32,7 +32,7 @@ public class UserRepository : BaseRepository, IUserRepository
         try
         {
             await _connection.OpenAsync();
-            string query = "INSERT INTO users(user_name, phone_number, passwordhash, salt, created_at, updated_at)" +
+            string query = "INSERT INTO users(user_name, phone_number, password_hash, salt, created_at, updated_at)" +
                 "VALUES(@UserName, @PhoneNumber, @PasswordHash, @Salt, @CreatedAt, @UpdatedAt); ";
 
             return await _connection.ExecuteAsync(query, entity);

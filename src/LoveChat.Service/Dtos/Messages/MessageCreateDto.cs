@@ -9,7 +9,7 @@ namespace LoveChat.Service.Dtos.Messages;
 
 public class MessageCreateDto
 {
-    public string Name { get; set; } = String.Empty;
+    public string UserName { get; set; } = String.Empty;
 
     public string PhoneNumber { get; set; } = String.Empty;
 
